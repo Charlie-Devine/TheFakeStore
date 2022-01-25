@@ -1,0 +1,19 @@
+﻿@page "/editproduct/{ProductId:int}"
+@inherits EditproductPageBase
+
+
+<EditForm Model="@product" OnValidSubmit="@HandleValidSubmit">
+
+                <DataAnnotationsValidator />
+                <ValidationSummary />
+
+                <div class="form-group">
+                    <label for="firstName">Title</label>
+                    <InputText id="Title" class="form-control" @bind-Value="@product.Title" ></InputText>
+                </div>
+
+            
+
+               <button type="submit" >Update</button>
+
+            </EditForm>

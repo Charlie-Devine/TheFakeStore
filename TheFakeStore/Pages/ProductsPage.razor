@@ -1,0 +1,35 @@
+﻿@page "/products"
+@inherits ProductsPageBase
+
+@if (Products is null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+        
+    
+    @foreach (var item in Products)
+    {
+
+            <div class="col">
+                <label>@item.Title</label>
+                <p>£@item.Price</p>
+                <p>Category:@item.Category</p>
+                <p>Description:@item.Description</p>
+                <img src="@item.Image" width="100px" height="100px">
+                <p>Rate:@item.Rating.Rate</p>
+                <p>TotalCount:@item.Rating.Count</p>
+            </div>
+
+    }
+
+        
+}
+
+
+
+    
+
+
+

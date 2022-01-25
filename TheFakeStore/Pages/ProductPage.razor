@@ -1,0 +1,29 @@
+﻿@page "/product"
+@inherits ProductPageBase
+
+
+<h3>Product</h3>
+
+<label id="searchbox" >Search</label>
+<input onchange="@OnProductChange" />
+
+
+<br />
+
+
+@if(product is null)
+{
+    <p><em>No product Selected...</em></p>
+}
+else
+{
+    <div>
+        <h1>@product.Title</h1>
+        <p>Price:@product.Price</p>
+        <p>Description:@product.Description</p>
+        <p>Category:@product.Category</p>
+        <p>image:@product.Image</p>
+        <p>Rating:@product.Rating.Rate</p>
+        <p>RatingCount:@product.Rating.Count</p
+    </div>
+}

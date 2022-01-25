@@ -1,0 +1,50 @@
+﻿@page "/add"
+@inherits AddProductPageBase
+
+@if (product is null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <div class="container">
+
+        <EditForm Model="@product" OnValidSubmit="HandleValidSubmit">
+
+
+            <div class="form-group">
+                <label for="firstName">Title</label>
+                <InputText id="Title" class="form-control" @bind-Value="@product.Title" placeholder="Producut title"></InputText>
+            </div>
+
+            @*conversion issue*@
+        @*    <div class="form-group">
+                <label for="price">Price</label>
+                <InputText id="price" class="form-control" onsubmit="@AddPrice" placeholder="Price"></InputText>
+            </div>*@
+
+            <div class="form-group">
+                <label for="description">Description</label>
+                <InputText id="desc" class="form-control" @bind-Value="@product.Description" placeholder="Description"></InputText>
+            </div>
+
+            <div class="form-group">
+                <label for="category"></label>
+                <InputText id="category" class="form-control" @bind-Value="@product.Category" placeholder="Category"></InputText>
+            </div>
+
+            <div class="form-group">
+                <label for="image"></label>
+                <InputText id="image" class="form-control" @bind-Value="@product.Image" placeholder="image URL"></InputText>
+            </div>
+
+            <button class="btn btn-primary" type="submit">Submit Product</button>
+
+
+        </EditForm>
+
+
+
+    </div>
+
+}
